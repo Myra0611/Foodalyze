@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About & Contact</title>
+  <style>
+    body {
+      background-color: #f9f6ef;
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    aside {
+    height: 1100px;
+    width: 100px;
+    background-color: #3d342c;
+    position : absolute ; 
+    top : 0px;
+    z-index: 1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      top: 0;
+      z-index: 10;
+    }
+    h1, h2 {
+      color: #534853;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 6px;
+      background: grey;
+      color: black;
+      font-size: 16px;
+    }
+    .btn {
+      margin-top: 20px;
+      background-color: #534853;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #534853;
+    }
+
+    .contact-info {
+      font-size: 16px;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .contact-info a {
+      color: black;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      h1, h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+
+    <!-- About Us Section -->
+    <section id="about">
+      <h1>About Us</h1>
+      <p>Welcome to our platform! We are a passionate team dedicated to building smart, user-friendly solutions that make healthy living easier. Whether it’s by helping users analyze food ingredients or simplifying daily choices, our goal is to empower people through technology.</p>
+      <p>Founded in 2025, our mission is to create a transparent and informed ecosystem for product scanning and wellness tracking. We believe in privacy, user-first design, and continual learning.</p>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+
+      <div class="contact-info">
+        📧 Email: <a href="mailto:support@example.com">scanme@foodalyze.com</a><br>
+        📞 Phone: <a href="tel:+919999999999">+91 12345 67890</a>
+      </div>
+
+      <form id="contactForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" rows="6" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  
+  <aside></aside>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for contacting us! We'll get back to you soon.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

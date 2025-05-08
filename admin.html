@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodalyze Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>FOODALYZE</h2>
+    <ul>
+      <li class="active" onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('users')">Users</li>
+      <li onclick="showSection('products')">Products</li>
+      <li onclick="showSection('settings')">Settings</li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>Admin Panel</h1>
+
+    <section id="dashboard" class="section active">
+      <div class="cards">
+        <div class="card"><p>Total Users</p><h2>1,200</h2></div>
+        <div class="card"><p>Total Products</p><h2>3,450</h2></div>
+        <div class="card"><p>Pending Approvals</p><h2>25</h2></div>
+      </div>
+      <div class="activity-graph">
+        <canvas id="searchChart"></canvas>
+      </div>
+    </section>
+
+    <section id="users" class="section">
+      <h2>Users</h2>
+      <input type="text" placeholder="Search by name or email" id="userSearch">
+      <select id="userFilter">
+        <option value="all">All</option>
+        <option value="recent">Recent</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Date Joined</th><th>Last Login</th><th>Total Scans</th><th>Action</th></tr>
+        </thead>
+        <tbody id="userTable">
+          <tr><td>Alice</td><td>alice@email.com</td><td>2024-01-10</td><td>2025-04-20</td><td>45</td><td><button>View</button><button>Disable</button></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="products" class="section">
+      <h2>Products</h2>
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Brand</th><th>Uploaded By</th><th>Date Added</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Maggi</td><td>Nestle</td><td>user123@email.com</td><td>2025-04-10</td><td>Pending</td><td><button>Approve</button><button>Delete</button></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Add New Product</h3>
+      <form>
+        <input type="text" placeholder="Product Name">
+        <input type="text" placeholder="Brand">
+        <input type="text" placeholder="Ingredients">
+        <input type="text" placeholder="Category">
+        <button type="submit">Add Product</button>
+      </form>
+    </section>
+
+    <section id="settings" class="section">
+      <h2>Settings</h2>
+      <button>Change Password</button>
+      <button>View Login History</button>
+      <button onclick="logout()">Logout</button>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
